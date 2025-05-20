@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&display=swap');
+
+ ::-webkit-scrollbar {
+    display: none;
+  }
+
+html { position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: auto;
+box-sizing: border-box; }
+body { width: 100%; height: auto; }
+
+#main-div {
+  height: 100vh; /* Full height */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
