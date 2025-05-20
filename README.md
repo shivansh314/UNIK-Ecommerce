@@ -4,8 +4,8 @@
 **Unik Ecommerce** is a full-stack web application designed to offer a seamless shopping experience. It includes features for both users and administrators, with powerful tools for managing products, analyzing reviews, and handling secure transactions.
 
 ## 🎥 Video Demo
-https://github.com/user-attachments/assets/9430bb0d-37e1-43aa-871f-009da4af26a7
 
+https://github.com/user-attachments/assets/d9984761-98dd-43cc-89e1-002772ad4b35
 ## 🚀 Features
 
 ### 🖥️ Frontend
