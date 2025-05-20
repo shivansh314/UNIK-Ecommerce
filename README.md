@@ -28,21 +28,21 @@ https://github.com/user-attachments/assets/9430bb0d-37e1-43aa-871f-009da4af26a7
 ## 🛠️ Installation Instructions
 
 ### 🔧 Frontend Setup
-bash
+```bash
 cd frontend
 npm install        # Install dependencies
 npm run dev        # Run development server
-
+```
 
 ### 🔧 Bckend Setup
-bash
+```bash
 cd backend
 npm install        # Install dependencies
 npm run dev        # Run development server
-
+```
 
 ### 🔧 Model Setup
-bash
+```bash
 cd model
 pip install -r requirements.txt   # Install Python dependencies
-python ml_server.py              # Run the ML server
+python ml_server.py              # Run the ML server```
