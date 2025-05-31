@@ -30,12 +30,10 @@ function CartCard({ id, name, color, size, quantity , cost, main_image_link }) {
         <h3 className="text-gray-500 text-md">{color}</h3>
         <h3 className="text-gray-500 text-md ">Size: {size}</h3>
       </div>
-      <div className="flex gap-2 pl-8 mr-2 ">
-        <button className=" px-3 text-2xl font-semibold">+</button>
+      <div className="flex gap-2 pl-18 pr-12 mr-2 ">
         <div className="p-5 border border-gray-300 h-5 w-5 flex items-center justify-center mt-16">
           {quantity}
-        </div>
-        <button className="px-3 text-2xl font-semibold">-</button>
+        </div> 
       </div>
       <h1 className="font-[inter] text-3xl mt-16 pl-10 mr-5 ">₹{cost}</h1>
       <div className="relative h-full w-30 flex items-center justify-center group overflow-hidden">

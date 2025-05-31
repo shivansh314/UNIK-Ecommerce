@@ -13,7 +13,7 @@ import AuthLayout from "../src/components/AuthLayout.jsx"
 
 import ProductPage from "./pages/productPage.jsx";
 import HomePage from "./pages/homePage.jsx";
-import ProductInfoPage from "./pages/productInfoPage.jsx";
+import ProductInfoPage from "./pages/productinfoPage.jsx";
 import Checkoutpage from "./pages/Checkoutpage.jsx";
 import AuthPage from "./pages/registerPage.jsx"
 import LoginPage from "./pages/LoginPage.jsx";

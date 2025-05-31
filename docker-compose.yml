@@ -1,0 +1,75 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres
+    container_name: my-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: UNIK
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./UNIKdump.sql:/docker-entrypoint-initdb.d/backup.sql
+    networks:
+      - app-network
+
+  model:
+    build:
+      context: ./model
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  backend:
+    build:
+      context: ./backend
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: UNIK
+      PG_HOST: my-postgres
+      PG_PORT: 5432
+      PG_DATABASE: UNIK
+      REFRESH_TOKEN_SECRET: f3a1d2e4b5c6
+      ACCESS_TOKEN_SECRET: cmFoU5Kf4kPl63BSGoLVX6EYo08OBG8uUIFQg22jJEii41BfeWto0b5kzH1uzCxj
+      RAZORPAY_KEY: rzp_test_auWPI1412UmCwa
+      RAZORPAY_SECRET: IotTH1RGpHAmZfYTe8rd4iXP
+      EMAIL_USER: shivanshbarthwal13@gmail.com
+      EMAIL_PASS: "xwnw vsek ekvj czjm"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    depends_on:
+      - model
+      - postgres
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  frontend:
+    build:
+      context: ./frontend
+    environment:
+      - VITE_RAZORPAY_KEY=rzp_test_auWPI1412UmCwa
+    ports:
+      - "5173:5173"
+
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - app-network
+
+volumes:
+  pgdata:
+
+networks:
+  app-network:
+    driver: bridge

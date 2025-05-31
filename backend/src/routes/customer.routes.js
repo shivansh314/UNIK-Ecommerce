@@ -23,4 +23,7 @@ router.route("/me").get(verifyJWT, getCurrentUser);
 router.get("/customers", getAllCustomers);
 router.get("/customers/:id", getCustomerById);
 router.post("/update/:id" , updateUserById);
+
 export default router;
+
+

@@ -88,7 +88,7 @@ const ProductComponent = ({ productId }) => {
         {/* Image */}
         <img
           src={product.main_image_link}
-          alt="Axolo Velours Sneakers"
+          alt="Axolo  Sneakers"
           className="w-full h-full object-cover"
         />
 
