@@ -23,8 +23,7 @@ import Check from "./pages/Check.jsx";
 
 import Dashboard from "./pages/Dashboard.jsx"
 import Adminorders from "./components/Dashboard/Adminorders.jsx"
-import Admincustomers from "./components/Dashboard/AdminCustomers.jsx"
-import Admindashboard from "./components/Dashboard/Admindashboard.jsx";
+
 import AdminReview from "./components/Dashboard/AdminReview.jsx"
 
 const router = createBrowserRouter([
@@ -73,9 +72,7 @@ const router = createBrowserRouter([
         path: "/dashboard",
         element: <Dashboard />, // Parent layout
         children: [
-          { path: "", element: <Admindashboard /> }, // Default page inside dashboard
-          { path: "orders", element: <Adminorders /> },
-          { path: "customers", element: <Admincustomers /> },
+          { path: "", element: <Adminorders /> },
           { path: "reviews", element: <AdminReview /> },
           // Add more admin sections as needed
         ],

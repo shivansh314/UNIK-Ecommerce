@@ -27,6 +27,8 @@ const Navbar = () => {
     setTotalItems(count);
   }, [cartData]);
 
+  const isLoggedIn = useSelector((state) => state.auth.status);
+
 
   return (
     <nav className="w-full h-16 flex items-center justify-between px-10 bg-transparent absolute top-0 left-0">
@@ -44,13 +46,17 @@ const Navbar = () => {
           MAN
         </Link>
         <Link to="/login" className="hover:opacity-75">
-          TRENDING
+          LOGIN
         </Link>
-        <Link to="/userprofile" className="hover:opacity-75">
+
+        {/* Conditionally render PROFILE link */}
+        <Link
+          to={isLoggedIn ? "/userprofile" : "/login"}
+          className="hover:opacity-75"
+        >
           PROFILE
         </Link>
       </div>
-
       {/* Right Icons */}
       <div className="flex items-center space-x-4">
         {/* Cart Button */}
@@ -65,8 +71,8 @@ const Navbar = () => {
         <CartDrawer isOpen={isOpen} setIsOpen={setIsOpen} />
 
         {/* User Icon */}
-         <Link to="/register" >
-        <User className={`w-5 h-5 ${textColor}`} />
+        <Link to="/register">
+          <User className={`w-5 h-5 ${textColor}`} />
         </Link>
         {/* Login Button */}
         <button className="w-8 h-8 flex items-center justify-center bg-white text-black rounded-full font-semibold">
