@@ -34,7 +34,7 @@ npm install        # Install dependencies
 npm run dev        # Run development server
 ```
 
-### 🔧 Bckend Setup
+### 🔧 Backend Setup
 ```bash
 cd backend
 npm install        # Install dependencies
